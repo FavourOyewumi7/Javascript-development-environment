@@ -4,10 +4,10 @@ var open = require('open');
 
 var port = 8080;
 
-var app = express;
+var app = express();
 
 app.get('/', function(res,req){
-    res.sendFile(path.join(__dirname, '../src/index.html'))
+    res.sendFile(path.join(__dirname, '../src/index.html'));
 })
 
 app.listen(port, function(err){
@@ -15,6 +15,7 @@ app.listen(port, function(err){
         console.log(err);
     }
     else{
+        open('http://localhost:'+ port);
         
-    }
+    };
 })
