@@ -7,8 +7,8 @@
   "version": "1.0.1",
   "description": "JavaScript development environment packages for use to build a Node.js project, obtained from: https://www.npmjs.com/search?q=",
   "scripts": {
-    "prestart": "babel-node srcScripts/startMessage.js",
-    "start": "babel-node srcScripts/server.js",
+    "prestart": "@babel-node srcScripts/startMessage.js",
+    "start": "node srcScripts/server.js",
     "share": "lt --port 8080"
   },
   "author": "Favour Oyewumi",
