@@ -8,12 +8,19 @@
   "description": "JavaScript development environment packages for use to build a Node.js project, obtained from: https://www.npmjs.com/search?q=",
   "scripts": {
     "prestart": "@babel-node srcScripts/startMessage.js",
-    "start": "node srcScripts/server.js",
-    "share": "lt --port 8080"
+    "start": "npx npm-run-all --parallel open:src lint test",
+    "open:src": "@babel-node srcScripts/server.js",
+    "share": "npx npm-run-all --parallel localtunnel open:src",
+    "localtunnel": "lt --port 8080",
+    "watch": "webpack --watch",
+    "lint": "eslint webpack.config.* src srcScripts --color",
+    "lint:watch": "npm run lint -- --watch",
+    "test": "mocha --reporter progress srcScripts/testSetup.js \"src/**/*.test.js\"",
+    "test:watch": "npm run test -- --cache"
   },
   "author": "Favour Oyewumi",
   "license": "MIT",
-  "dependencies": {
+  "dependencies": { 
     "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
