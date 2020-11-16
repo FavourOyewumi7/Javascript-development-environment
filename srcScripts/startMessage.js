@@ -1,3 +1,3 @@
-import { green } from "chalk";
+import { blue } from "chalk";
 
-console.log(green("Starting app in dev mode....."));
+console.log(blue("Starting app in dev mode....."));
